@@ -1,15 +1,18 @@
 package figures.impl;
 
 import figures.api.Figure;
+import figures.impl.entity.Circle;
+import figures.impl.entity.Square;
+import figures.impl.entity.Trapeze;
+import figures.impl.entity.Triangle;
 
 /**
  * Created by User on 17.10.2016.
  */
-public class Operation {
+public class FiguresArray {
     public void go(){
         int arrayLength = (int) (Math.random() * 15 + 1);
         Figure[] figures = new Figure[arrayLength];
-        System.out.println(figures.length);
         for (int i = 0; i < figures.length; i++) {
             Figure figure;
             int randomNumber = (int) (Math.random() * (4 - 1) + 1) + 1;
@@ -34,8 +37,10 @@ public class Operation {
             }
         }
 
-        for (int i = 0; i < figures.length; i++) {
-            System.out.println(figures[i]);
+        for (Figure figure : figures) {
+           // System.out.println("Figure color: " + figure.getColor());
+           // System.out.println("Figure area: " + figure.getArea());
+            System.out.println(" All figure parameters:  " + figure);
         }
     }
 }

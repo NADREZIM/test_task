@@ -1,11 +1,11 @@
-import figures.impl.Operation;
+import figures.impl.FiguresArray;
 
 /**
  * Created by User on 17.10.2016.
  */
-public class Test {
+public class Main {
     public static void main(String[] args) {
-        Operation operation = new Operation();
+        FiguresArray operation = new FiguresArray();
         operation.go();
     }
 }

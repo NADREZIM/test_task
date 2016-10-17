@@ -1,4 +1,4 @@
-package figures.impl;
+package figures.impl.entity;
 
 import figures.api.Colors;
 import figures.api.Figure;
@@ -11,15 +11,17 @@ public class Square implements Figure {
     private double squareSide;
     private String color;
     private double area;
+    private static final int diapason = 17;
+    private static final int colorDiapason = 8;
 
     @Override
     public Figure createFigure() {
 
         Square square = new Square();
         square.setName("square");
-        double randomSquareSide = (int) (Math.random() * (15 - 1) + 1) + 1;
+        double randomSquareSide = (int) (Math.random() * diapason);
         square.setSquareSide(randomSquareSide);
-        int colorDigit = (int) (Math.random() * 7 + 1);
+        int colorDigit = (int) (Math.random() * colorDiapason);
         String randomColor = Colors.color[colorDigit];
         square.setColor(randomColor);
         square.setArea(square.getSquareSide()*square.getSquareSide());
@@ -60,7 +62,7 @@ public class Square implements Figure {
 
     @Override
     public String toString() {
-        return "Square{" +
+        return "Figure{" +
                 "name='" + name + '\'' +
                 ", squareSide=" + this.getSquareSide() +
                 ", color='" + color + '\'' +

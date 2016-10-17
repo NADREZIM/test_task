@@ -5,7 +5,7 @@ package figures.api;
  */
 public interface Figure {
 
-    public Figure createFigure();
+    public Figure  createFigure();
     public String getColor();
     public double getArea();
 

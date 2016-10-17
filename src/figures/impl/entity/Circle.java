@@ -1,4 +1,4 @@
-package figures.impl;
+package figures.impl.entity;
 
 import figures.api.Colors;
 import figures.api.Figure;
@@ -9,19 +9,22 @@ import figures.api.Figure;
 public class Circle implements Figure {
     private String name;
     private double radius;
-    private String color;
+    private  String color;
     private double area;
+    private static final int diapason = 20;
+    private static final int colorDiapason = 8;
+
 
     @Override
-    public Figure createFigure() {
+    public  Figure  createFigure() {
 
         Circle circle = new Circle();
         circle.setName("circle");
-        double randomCircleRadius = (int) (Math.random() * (20 - 2) + 1) + 1;
+        double randomCircleRadius = (int) (Math.random() * diapason );
         circle.setRadius(randomCircleRadius);
-        int colorDigit = (int) (Math.random() * 7 + 1);
+        int colorDigit = (int) (Math.random() * colorDiapason);
         circle.setColor(Colors.color[colorDigit]);
-        circle.setArea(3.14*(circle.getRadius() * circle.getRadius()));
+        circle.setArea(Math.PI*(circle.getRadius() * circle.getRadius()));
         return circle;
 
     }
@@ -58,7 +61,7 @@ public class Circle implements Figure {
 
     @Override
     public String toString() {
-        return "Circle{" +
+        return "Figure{" +
                 "name='" + name + '\'' +
                 ", radius=" + this.getRadius() +
                 ", color='" + color + '\'' +
